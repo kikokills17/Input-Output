@@ -60,6 +60,7 @@ const input2 = document.getElementsByClassName('monthInput2')[0];
 const section = document.getElementsByTagName('section')[0];
 const prompt = document.getElementsByClassName('prompt')[0];
 const logs = document.getElementsByClassName('logs')[0];
+const header = document.getElementsByTagName('header')[0];
 
 (function focusInput() {
   setTimeout(function() {
@@ -72,7 +73,7 @@ function handleInputMonth(month) {
   if (!month) return;
   let res = month.toLowerCase();
   let first = res[0].toUpperCase();
-  let rest = res.slice(1);
+  let rest = res.slice(1, 3);
   return first + rest;
 }
 
@@ -92,7 +93,6 @@ function displayCake(cakeData) {
   img.src = cakeData.Attachments[0].url;
   img.title = cakeData.Notes;
   img.alt = cakeData.Notes;
-  img.classList.add('img-box');
   imgBox.appendChild(img);
 }
 
@@ -100,12 +100,14 @@ function displayCake(cakeData) {
 input.addEventListener('keydown', function (e) {
   if (e.key === 'Enter') {
     const inputMonth = handleInputMonth(this.value);
-
+    
     const isExist = cakes.find(cake => {
-      return cake.fields.month === inputMonth
+      return inputMonth === cake.fields.month.slice(0, 3);
     })
+
     if (isExist) {
       displayCake(isExist.fields);
+      header.classList.add('left');
       prompt.style.display = 'none';
       input.style.display = 'none';
       input2.style.display = 'inline-block';
@@ -131,7 +133,7 @@ input2.addEventListener('keydown', function (e) {
     const inputMonth = handleInputMonth(this.value);
 
     const isExist = cakes.find(cake => {
-      return cake.fields.month === inputMonth
+      return inputMonth === cake.fields.month.slice(0, 3);
     })
     if (isExist) {
       displayCake(isExist.fields);
