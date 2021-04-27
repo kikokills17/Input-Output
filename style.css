@@ -1,0 +1,91 @@
+@font-face {
+  font-family: 'Culture';
+  src: url('./fonts/Culture.otf');
+}
+
+@font-face {
+  font-family: 'Love';
+  src: url('./fonts/Love.otf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Culture, serif;
+  font-weight: normal;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  min-width: 32rem;
+}
+
+ul, li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  min-width: 32rem;
+}
+
+header {
+  min-height: 15%;
+  padding-top: 10.8rem;
+}
+header h1.prompt {
+  width: 85rem;
+  margin: 0 auto;
+  font-size: 4.8rem;
+  text-align: center;
+}
+
+header h3.logs {
+  /* width: 85rem; */
+  height: 8rem;
+  /* margin: 0 auto; */
+  margin-left: 5rem;
+  font-size: 4.8rem;
+  text-align: initial;
+  word-break:break-all;
+  overflow-y: auto;
+}
+
+.log .monthInput2 {
+  display: inline-block;
+  /* width: 100%; */
+  border: none;
+  outline: none;
+  margin-left: 5rem;
+  font-size: 4.8rem;
+  display: none;
+}
+
+section {
+  width: 85rem;
+  margin: 0 auto;
+  /* margin-top: 10rem; */
+  text-align: center;
+}
+.input-field .monthInput {
+  display: inline-block;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 45rem;
+  font-family: 'Love';
+}
+
+.img-box {
+  width: 75%;
+  margin: 0 auto;
+  height: calc(100vh - 15%);
+}
